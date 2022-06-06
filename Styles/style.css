@@ -1,0 +1,300 @@
+*{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../Assets/Hinchada.jpg);
+}
+/*seccion Inicio*/
+.contenedor{
+    display:grid;
+    grid-template-areas: 
+                        "nav nav nav"
+                        "noticias noticias atajo"
+                        "footer footer footer"; 
+}
+.encabezado{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background-image: url(../Assets/header\ ATU.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 250px;
+    background-color: mediumturquoise;
+    margin: 0 1%;
+    border-radius: 3%;
+    position: sticky;
+    top: 0;
+    grid-area: nav;
+}
+.logo{
+    padding: 10px 0;
+    font-size: 16px;
+}
+.logo a{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+.logo__titulo{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4em;
+}
+nav ul li{
+    padding: 10px 0;
+    display: inline;
+    margin: 0px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:rgb(1, 33, 39);
+    font-size: 1.5rem; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.atajo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    padding: 50px 20px;
+    margin: 20px 1%;
+    border-radius: 3%;
+    grid-area: atajo;
+    height: 50vh;
+    margin-top: 45%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+.atajo__titulo{
+    margin: 20px 0;
+}
+.atajo__img{
+    border-radius: 5%;
+}
+.principal{
+    background-color: cadetblue;
+    margin: 20px 1%;
+    padding: 30px 30px;
+    border-radius: 3%;
+    grid-area: noticias;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+/*main{
+    background-color: cadetblue;
+    margin: 20px 1%;
+    padding: 30px 30px;
+    border-radius: 3%;
+}*/
+.noticiaUno{
+    display: flex;
+}
+.noticiaUno img{
+    border-radius: 5%;
+}
+.noticiaUno div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+}
+.noticiaDos{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.noticiaDos img{
+    border-radius: 5%;
+}
+.noticiaDos div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.reseña{
+    font-family:'Times New Roman', Times, serif;
+}
+/*seccion de fixture*/
+.contenedorFix{
+    display: grid;
+    grid-template-areas:
+                        "nav"
+                        "contenido"
+                        "footer";
+}
+.principalFix{
+    background-color: cadetblue;
+    margin: 20px 1%;
+    padding: 30px 30px;
+    border-radius: 3%;
+    grid-area: contenido;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.partido{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.partido img{
+    border-radius: 3%;
+}
+.partidoAnterior{
+    display: flex;
+}
+.partidoAnterior div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+    justify-content: center;
+}
+/*seccion de plantel*/
+.contenedorPlantel{
+    display: grid;
+    grid-template-areas: 
+                        "nav"
+                        "contenido"
+                        "footer";
+}
+.principalPlantel{
+    background-color: cadetblue;
+    margin: 20px 1%;
+    padding: 30px 30px;
+    border-radius: 3%;
+    grid-area: contenido;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.plantel{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    height: 50vh;
+}
+table{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: solid whitesmoke;
+}
+/*seccion del estadio*/
+.contenedorEstadio{
+    display: grid;
+    grid-template-areas: "nav"
+                         "contenido"
+                         "footer";
+}
+.principalEst{
+    background-color: cadetblue;
+    margin: 20px 1%;
+    padding: 30px 30px;
+    border-radius: 3%;
+    grid-area: contenido;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.descripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.descripcion img{
+    border-radius: 3%;
+}
+/*seccion de asociamiento*/
+.contenedorAsoc{
+    display: grid;
+    grid-template-areas: "nav"
+                         "contenido"
+                         "footer";
+}
+.principalAsoc{
+    background-color: cadetblue;
+    margin: 20px 1%;
+    padding: 30px 30px;
+    border-radius: 3%;
+    grid-area: contenido;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.asoc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+}
+footer{
+    background-color: whitesmoke ;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    grid-area: footer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
+}
+.imgf{
+    display: flex;
+    align-items: center;
+    margin: 1% 0;
+}
+.redes{
+    list-style: none;
+    align-items: center;
+}
+.contacto{
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 500px){
+    .contenedor{
+        grid-template-areas: "nav"
+                             "atajo"
+                             "noticias"
+                             "footer";
+    }
+    .logo{
+        font-size: 0.8em;
+    }
+    nav ul li a{
+        font-size: 1.2em;
+    }
+    .atajo{
+        margin-top: 10%;
+    }
+    .noticiaUno{
+        flex-direction: column;
+        align-items: center;
+    }
+    .noticiaDos{
+        flex-direction: column;
+        align-items: center;
+    }
+    footer{
+        flex-direction: column;
+        align-items:center;
+    }
+    /*seccion Fixture*/
+    .contenedorFix{
+        grid-template-areas: "nav"
+                             "contenido"
+                             "footer";
+    }
+    .partidoAnterior{
+        flex-direction: column;
+    }
+    /*seccion Plantel*/
+    table{
+        font-size: 0.8em;
+    }
+    /*seccion Estadio*/
+    .descripcion img{
+        width: 400px;
+    }
+    /*seccion Asociamiento*/
+    .principalAsoc{
+        height: 100vh;
+    }
+}
