@@ -73,6 +73,14 @@ nav ul li a{
 }
 .atajo__img{
     border-radius: 5%;
+    overflow: hidden;
+}
+.atajo__img img{
+    border-radius: 5%;
+    transition: transform 3s;
+}
+.atajo__img img:hover{
+    transform: scale(1.2);
 }
 .principal{
     background-color: cadetblue;
@@ -226,8 +234,13 @@ table{
     height: 50vh;
 }
 footer{
+    background: rgb(57,74,255);
+    background: -moz-linear-gradient(0deg, rgba(57,74,255,0.9752275910364145) 3%, rgba(24,183,224,1) 33%, rgba(255,255,255,1) 91%);
+    background: -webkit-linear-gradient(0deg, rgba(57,74,255,0.9752275910364145) 3%, rgba(24,183,224,1) 33%, rgba(255,255,255,1) 91%);
+    background: linear-gradient(0deg, rgba(57,74,255,0.9752275910364145) 3%, rgba(24,183,224,1) 33%, rgba(255,255,255,1) 91%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#394aff",endColorstr="#ffffff",GradientType=1);
     background-color: whitesmoke ;
-    color: black;
+    color: rgba(0, 0, 0, 0.808);
     display: flex;
     justify-content: space-between;
     margin-top: 10%;
