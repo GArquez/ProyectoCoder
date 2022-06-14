@@ -12,6 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantel</title>
+    <!--Font de google-->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+  </style>
         <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <!--Bootstrap-->
@@ -28,6 +32,9 @@
     <div class="container">
       <!--Logo-->
       <a class="navbar-brand" href="./index.html"><img src="../Assets/favicon.png" width="50px" alt="Escudo ATU"></a>
+      <div class="Txtlogo">
+        <h1>Club <br>Atlético <br>Tucumán</h1>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -53,6 +60,31 @@
 <!--Fin de la navbar-->
         <!--Inicio de lo principal de esta pagina-->
         <main class="principalPlantel">
+          <div id="carouselExampleSlidesOnly" class="d-flex justify-content-center carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner w-25">
+              <div class="carousel-item active">
+                <img src="../Assets/Plantel/Lampe.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block text-dark">
+                  <h5>Arquero</h5>
+                  <p>Lampe</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="../Assets/Plantel/Bianchi.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block text-dark">
+                  <h5>Defensor</h5>
+                  <p>Bianchi</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="../Assets/Plantel/Menendez.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block text-dark">
+                  <h5>Delantero</h5>
+                  <p>Menendez</p>
+                </div>
+              </div>
+            </div>
+          </div>
             <div class="plantel">
                     <h2>Plantel 2021/2022</h2>
                     <table cellpagging="5">
@@ -63,7 +95,7 @@
                             <th>Delanteros</th>
                         </tr>
                         <tr>
-                            <td>Nicolas Campisi</td>
+                            <td>Carlos Lampe</td>
                             <td>Bruno Bianchi</td>
                             <td>Guillermo Acosta</td>
                             <td>Cristian Menendez</td>

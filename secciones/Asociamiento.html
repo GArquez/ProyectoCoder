@@ -12,6 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Asociate!</title>
+    <!--Font de google-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+    </style>
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!--Bootstrap-->
@@ -28,6 +32,9 @@
     <div class="container">
       <!--Logo-->
       <a class="navbar-brand" href="./index.html"><img src="../Assets/favicon.png" width="50px" alt="Escudo ATU"></a>
+      <div class="Txtlogo">
+        <h1>Club <br>Atletico <br>Tucuman</h1>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -60,43 +67,62 @@
                     <br>
                     <h3>Forma parte de la vida institucional, tomando decsisiones y aprovechando los beneficios.</h3>
                     <br><br><br>
-                    <form action="" method="get" enctype="text/plain" class="formulario">
-                        <fieldset>
-                    <legend>Coloque sus datos para contactarlo</legend>
-                            <div>
-                                <label for="userName">Nombre/s</label>
-                                <input type="text" id="userName" name="userName" placeholder="Coloque sus nombres">
+                    <form action="" method="get" enctype="text/plain" class="w-100">
+                        <legend>Coloque sus datos para contactarlo</legend>
+                        <div class="row mb-3">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail" required placeholder="Coloque su e-mail">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="inputNombre" class="col-sm-2 col-form-label">Nombre/s</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputNombre" placeholder="Coloque su/s nombre/s">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputApellido" class="col-sm-2 col-form-label">Apellido/s</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="inputApellido"placeholder="Coloque su/s apellido/s">
                             </div>
-                            <div>
-                                <label for="userName">Apellido/s</label>
-                                <input type="text" id="userName" name="userName" placeholder="Coloque sus apellidos">
+                        </div>
+                        <fieldset class="row mb-3">
+                          <legend class="col-form-label col-sm-2 pt-0">Edad</legend>
+                          <div class="col-sm-10">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                              <label class="form-check-label" for="gridRadios1">
+                                +18 años
+                              </label>
                             </div>
-                            <div>
-                                <label for="userMail">E-mail</label>
-                                <input type="email" id="userMail" required>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                              <label class="form-check-label" for="gridRadios2">
+                                -18 años
+                              </label>
                             </div>
-                            <div>
-                                 Edad
-                                 <div>
-                                    <label for="menos18"> < 18 años </label>
-                                    <input type="radio" id="menos18" value="mas18" >
-                                </div>
-                                <div>
-                                    <label for="mas18"> > 18 años</label>
-                                    <input type="radio" id="mas18" value="mas18">
-                                </div>
+                            <div class="form-check ">
+                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                              <label class="form-check-label" for="gridRadios3">
+                                +65 años
+                              </label>
                             </div>
-                            <div>
-                                <label for="residencia">¿Vivis en Tucuman?</label>
-                                <select name="residencia" id="residencia">
-                                    <option value="Si"> Si</option>
-                                    <option value="No"> No</option>
-                                </select>
-                            </div>
-                            <input type="submit" value="Enviar">
-                            <input type="reset" value="Borrar">
+                          </div>
                         </fieldset>
-                    </form>
+                        <div class="row mb-3">
+                          <div class="col-sm-10 offset-sm-2">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="gridCheck1">
+                              <label class="form-check-label" for="gridCheck1">
+                                ¿Vivis en Tucumán?
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="reset" class="btn btn-secondary">Borrar</button>
+                      </form>
                 </div>
             </section>
         </main>

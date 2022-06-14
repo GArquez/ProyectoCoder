@@ -20,6 +20,10 @@ header{
     grid-area: nav;
     margin-bottom: 5%;
 }
+.Txtlogo{
+    font-family: 'Volkhov', serif;
+    color: rgba(69, 171, 230, 0.829);
+}
 /*
 .encabezado{
     display:flex;
@@ -198,8 +202,13 @@ nav ul li a{
     display: flex;
     flex-direction: column;
     justify-content:space-around;
-    align-items: center;
+    align-items:center;
     height: 50vh;
+}
+.carousel-caption{
+    background-color: aliceblue;
+    border-left: 5px solid rgb(143, 122, 4);
+    border-bottom: 5px solid rgb(143, 122, 4);
 }
 table{
     table-layout: fixed;
@@ -260,6 +269,7 @@ table{
 .asoc{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
 }
@@ -352,6 +362,6 @@ footer{
     }
     /*seccion Asociamiento*/
     .principalAsoc{
-        height: 100vh;
+        height: 100%;
     }
 }
