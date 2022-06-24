@@ -1,6 +1,12 @@
 @import "./parciales/variables";
 @import "./parciales/margenes";
 @import "./parciales/layout";
+$estilos:(
+    fuentetitulo:'Volkhov',/* serif,*/
+    fuenteprincipal:'Segoe UI',/* Tahoma, Geneva, Verdana, sans-serif,*/
+    fuentereseña:'Times New Roman',/* Times, serif,*/
+    fuentefooter:'Franklin Gothic Medium',/* 'Arial Narrow', Arial, sans-serif,*/
+);
 /*seccion Inicio*/
 body{
     background-image: $fondo-pagina;
@@ -9,7 +15,7 @@ header{
     grid-area: nav;
     margin-bottom: 5%;
     .Txtlogo{
-        font-family: 'Volkhov', serif;
+        font-family: map-get($estilos, fuentetitulo);
         color: rgba(69, 171, 230, 0.829);
     }
 }
@@ -19,12 +25,15 @@ header{
     padding: 30px 30px;
     border-radius: 1%;
     grid-area: noticias;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: map-get($estilos, fuenteprincipal);
     font-size: 1em;
+    @include movil{
+        margin: 0 5%;
+    }
 }
 .noticiaUno{
     display: flex;
-    & img{
+    &__img{
         border-radius: 5%;
     }
     &__texto{
@@ -34,33 +43,34 @@ header{
         justify-content: center;
         padding: 0px 10px;
     }
+    @include movil{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .noticiaDos{
     display: flex;
     flex-direction: row-reverse;
     & img{
-        border-radius: 5%;
+        @extend .noticiaUno__img;
     }
     &__texto{
-        display: flex;
+        @extend .noticiaUno__texto;
+    }
+    @include movil{
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 0 10px;
     }
 }
 .atajo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @extend .noticiaUno__texto;
     background-color: $fondo-cuerpo;
     padding: 50px 20px;
     margin-right: 5%;
     border-radius: 1%;
     grid-area: atajo;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: map-get($estilos, fuenteprincipal);
     font-size: 1em;
     &__titulo{
         margin: 20px 0;
@@ -76,9 +86,13 @@ header{
     &__img img:hover{
         transform: scale(1.2);
     }
+    @include movil {
+        margin: 0 5%;
+        height: 50vh;
+    }
 }
 .reseña{
-    font-family:'Times New Roman', Times, serif;
+    font-family: map-get($estilos, fuentereseña);
     grid-area: resumen;
     margin-top: 5%;
 }
@@ -93,7 +107,7 @@ footer{
     display: flex;
     justify-content: space-evenly;
     grid-area: footer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: map-get($estilos, fuentefooter);
     font-size: 1em;
     .imgf{
         display: flex;
@@ -101,10 +115,7 @@ footer{
         margin: 2% 0;
     }
     .redes{ 
-        display: flex;
-        flex-direction: column;    
-        align-items: center;
-        justify-content: center;
+        @extend .noticiaUno__texto;
         & ul{
             list-style: none;
         }
@@ -113,31 +124,7 @@ footer{
         display: flex;
         align-items: center;
     }
-}
-@media only screen and (max-width: 500px){
-    .contenedor{
-        grid-template-areas: "nav"
-                             "atajo"
-                             "noticias"
-                             "resumen"
-                             "footer";
-    }
-    .atajo{
-        margin: 0 5%;
-        height: 50vh;
-    }
-    .principal{
-        margin: 0 5%;
-    }
-    .noticiaUno{
-        flex-direction: column;
-        align-items: center;
-    }
-    .noticiaDos{
-        flex-direction: column;
-        align-items: center;
-    }
-    footer{
+    @include movil{
         flex-direction: column;
         align-items:center;
     }

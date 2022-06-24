@@ -1,3 +1,4 @@
+@import "./responsive";
 .contenedor{
     display:grid;
     grid-template-areas: 
@@ -5,4 +6,11 @@
                         "noticias noticias atajo"
                         "resumen resumen resumen"
                         "footer footer footer"; 
+    @include movil {
+        grid-template-areas: "nav"
+                             "atajo"
+                             "noticias"
+                             "resumen"
+                             "footer";
+    }
 }
