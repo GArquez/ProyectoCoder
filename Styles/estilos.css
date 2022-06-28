@@ -6,10 +6,29 @@
 
 .contenedor {
   display: grid;
-  grid-template-areas: "nav nav nav" "noticias noticias atajo" "resumen resumen resumen" "footer footer footer"; }
+  grid-template-areas: "nav nav nav" "noticias noticias atajo" "divisor divisor divisor" "otra otra otra" "resumen resumen resumen" "footer footer footer"; }
   @media only screen and (max-width: 500px) {
     .contenedor {
-      grid-template-areas: "nav" "atajo" "noticias" "resumen" "footer"; } }
+      grid-template-areas: "nav" "atajo" "noticias" "divisor" "otra" "resumen" "footer"; } }
+
+.contenedorFix {
+  display: grid;
+  grid-template-areas: "nav" "contenido" "resumen" "footer"; }
+  @media only screen and (max-width: 500px) {
+    .contenedorFix {
+      grid-template-areas: "nav" "contenido" "resumen" "footer"; } }
+
+.contenedorPlantel {
+  display: grid;
+  grid-template-areas: "nav" "contenido" "resumen" "footer"; }
+
+.contenedorEstadio {
+  display: grid;
+  grid-template-areas: "nav" "contenido" "resumen" "footer"; }
+
+.contenedorAsoc {
+  display: grid;
+  grid-template-areas: "nav" "contenido" "resumen" "footer"; }
 
 /*seccion Inicio*/
 body {
@@ -24,20 +43,24 @@ header {
 
 .principal {
   background-color: whitesmoke;
-  margin-left: 2.5%;
-  padding: 30px 30px;
-  border-radius: 1%;
-  grid-area: noticias;
+  margin: 0 20px;
+  padding: 0px 30px;
   font-family: "Segoe UI";
-  font-size: 1em; }
+  font-size: 1em;
+  grid-column: 1 / span 3; }
   @media only screen and (max-width: 500px) {
     .principal {
-      margin: 0 5%; } }
+      margin: 0 5%;
+      grid-column: 1; } }
+
+.noticias {
+  grid-area: noticias;
+  margin: 10px 0; }
 
 .noticiaUno {
   display: flex; }
   .noticiaUno__img, .noticiaDos img {
-    border-radius: 5%; }
+    border-radius: 0%; }
   .noticiaUno__texto, .noticiaDos__texto, .atajo, footer .redes {
     display: flex;
     flex-direction: column;
@@ -60,18 +83,16 @@ header {
 .atajo {
   background-color: whitesmoke;
   padding: 50px 20px;
-  margin-right: 5%;
-  border-radius: 1%;
   grid-area: atajo;
   font-family: "Segoe UI";
   font-size: 1em; }
   .atajo__titulo {
     margin: 20px 0; }
   .atajo__img {
-    border-radius: 5%;
+    border-radius: 0%;
     overflow: hidden; }
   .atajo__img img {
-    border-radius: 5%;
+    border-radius: 0%;
     transition: transform 3s; }
   .atajo__img img:hover {
     transform: scale(1.2); }
@@ -79,6 +100,22 @@ header {
     .atajo {
       margin: 0 5%;
       height: 50vh; } }
+
+.divisor {
+  grid-area: divisor;
+  background-image: url(../Assets/UmbroATU.jpg);
+  background-color: whitesmoke;
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; }
+
+.otraseccion {
+  grid-area: otra;
+  background-color: whitesmoke;
+  margin: 0 20px; }
 
 .reseña {
   font-family: "Times New Roman";
@@ -111,3 +148,97 @@ footer {
     footer {
       flex-direction: column;
       align-items: center; } }
+
+/*seccion de fixture*/
+.principalFix {
+  background-color: whitesmoke;
+  margin: 20px 1%;
+  padding: 30px 30px;
+  border-radius: 3%;
+  grid-area: contenido;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+.partido {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .partido__img {
+    border-radius: 3%; }
+
+.partidoAnterior {
+  display: flex; }
+  .partidoAnterior__txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+    justify-content: center; }
+  @media only screen and (max-width: 500px) {
+    .partidoAnterior {
+      flex-direction: column; } }
+
+/*seccion Plantel*/
+.principalPlantel {
+  background-color: whitesmoke;
+  margin: 20px 1%;
+  padding: 30px 30px;
+  border-radius: 3%;
+  grid-area: contenido;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+.carousel-caption {
+  background-color: aliceblue;
+  border-left: 5px solid #8f7a04;
+  border-bottom: 5px solid #8f7a04; }
+
+.plantel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50vh; }
+  .plantel__tabla {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: solid whitesmoke; }
+    @media only screen and (max-width: 500px) {
+      .plantel__tabla {
+        font-size: 0.8em; } }
+
+/*seccion del estadio*/
+.principalEst {
+  background-color: cadetblue;
+  margin: 20px 1%;
+  padding: 30px 30px;
+  border-radius: 3%;
+  grid-area: contenido;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .descripcion__img {
+    border-radius: 3%; }
+    @media only screen and (max-width: 500px) {
+      .descripcion__img {
+        width: 400px; } }
+
+/*seccion de asociamiento*/
+.principalAsoc {
+  background-color: cadetblue;
+  margin: 20px 1%;
+  padding: 30px 30px;
+  border-radius: 3%;
+  grid-area: contenido;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  @media only screen and (max-width: 500px) {
+    .principalAsoc {
+      height: 100%; } }
+  .principalAsoc .asoc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh; }
