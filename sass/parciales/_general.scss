@@ -30,12 +30,14 @@ header{
 }
 .noticias{
     grid-area: noticias;
-    margin: 10px 0;
 }
 .noticiaUno{
     display: flex;
     &__img{
-        border-radius: 0%;
+        width: 50%;
+        @include movil{
+            width: 100%;
+        }
     }
     &__texto{
         display: flex;
@@ -53,7 +55,7 @@ header{
 .noticiaDos{
     display: flex;
     flex-direction: row-reverse;
-    & img{
+    &__img{
         @extend .noticiaUno__img;
     }
     &__texto{
@@ -65,8 +67,14 @@ header{
     }
 }
 .atajo{
-    @extend .noticiaUno__texto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: $fondo-cuerpo;
+    background-image: url(../Assets/LogoLPF.png);
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-position: bottom;
     padding: 50px 20px;
     grid-area: atajo;
     font-family: map-get($estilos, fuenteprincipal);
@@ -75,19 +83,16 @@ header{
         margin: 20px 0;
     }
     &__img{
-        border-radius: 0%;
         overflow: hidden;
     }
     &__img img{
-        border-radius: 0%;
         transition: transform 3s;
     }
     &__img img:hover{
         transform: scale(1.2);
     }
-    @include movil {
-        margin: 0 5%;
-        height: 50vh;
+    &__marcador{
+        font-size: 2em;
     }
 }
 .divisor{
@@ -105,6 +110,27 @@ header{
     grid-area: otra;
     background-color: $fondo-cuerpo;
     margin: 0 20px;
+    &__asociate{
+        background-image: url(../Assets/Asociate.jpg);
+        background-color: $fondo-cuerpo;
+        background-size: cover;
+        background-position: center;
+        background-clip: content-box;
+        background-blend-mode: luminosity;
+        font-family: map-get($estilos, fuenteprincipal);
+        font-size: 3em;
+        & a{
+            text-decoration: none;
+            color: rgb(175, 139, 32);
+            transition: transform 3s;
+        }
+        & a:hover{
+            transform: scale(1.1);
+        }    
+        @include movil{
+            margin-bottom: 5%;
+        }
+    }
 }
 .reseña{
     font-family: map-get($estilos, fuentereseña);
@@ -149,7 +175,6 @@ footer{
     background-color: $fondo-cuerpo;
     margin: 20px 1%;
     padding: 30px 30px;
-    border-radius: 3%;
     grid-area: contenido;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -158,11 +183,19 @@ footer{
     flex-direction: column;
     align-items: center;
     &__img{
-        border-radius: 3%;
+        width: 50%;
+        @include movil{
+            width: 100%;
+        }
     }
 }
 .partidoAnterior{
-    display: flex;    
+    display: flex;
+    & iframe{
+        @include movil{
+            width: 100%;
+        }
+    }    
     &__txt{
         display: flex;
         flex-direction: column;
@@ -172,7 +205,11 @@ footer{
     }
     @include movil{
         flex-direction: column;
+        margin-top: 5%;
     }
+}
+.fixture{
+    margin: 50px 0;
 }
 .reseña{
     @extend .reseña;
@@ -182,29 +219,21 @@ footer{
     background-color: $fondo-cuerpo;
     margin: 20px 1%;
     padding: 30px 30px;
-    border-radius: 3%;
     grid-area: contenido;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.carousel-caption{
-    background-color: aliceblue;
-    border-left: 5px solid rgb(143, 122, 4);
-    border-bottom: 5px solid rgb(143, 122, 4);
-}
-.plantel{
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    align-items:center;
-    height: 50vh;
-    &__tabla{
-        table-layout: fixed;
-        width: 100%;
-        border-collapse: collapse;
-        border: solid whitesmoke;
+.carrusel{
+        margin: 50px 0;
+    .carousel-inner{
+        width: 25%;
         @include movil{
-            font-size: 0.8em;
+            width: 50%;
         }
+    }
+    .carousel-caption{
+        background-color: aliceblue;
+        border-left: 5px solid rgb(143, 122, 4);
+        border-bottom: 5px solid rgb(143, 122, 4);
     }
 }
 .reseña{
@@ -212,10 +241,14 @@ footer{
 }
 /*seccion del estadio*/
 .principalEst{
+    background-image: url(../Assets/EstadioFondo.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: cadetblue;
     margin: 20px 1%;
     padding: 30px 30px;
-    border-radius: 3%;
     grid-area: contenido;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -224,7 +257,6 @@ footer{
     flex-direction: column;
     align-items: center;
     &__img{
-        border-radius: 3%;
         @include movil{
             width: 400px;
         }
@@ -236,20 +268,15 @@ footer{
 /*seccion de asociamiento*/
 .principalAsoc{
     background-color: cadetblue;
-    margin: 20px 1%;
+    margin: 0% 1%;
     padding: 30px 30px;
-    border-radius: 3%;
     grid-area: contenido;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    @include movil{
-        height: 100%;
-    }
     .asoc{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        height: 100vh;
     }
 }
 .reseña{

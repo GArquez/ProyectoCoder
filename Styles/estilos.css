@@ -54,14 +54,16 @@ header {
       grid-column: 1; } }
 
 .noticias {
-  grid-area: noticias;
-  margin: 10px 0; }
+  grid-area: noticias; }
 
 .noticiaUno {
   display: flex; }
-  .noticiaUno__img, .noticiaDos img {
-    border-radius: 0%; }
-  .noticiaUno__texto, .noticiaDos__texto, .atajo, footer .redes {
+  .noticiaUno__img, .noticiaDos__img {
+    width: 50%; }
+    @media only screen and (max-width: 500px) {
+      .noticiaUno__img, .noticiaDos__img {
+        width: 100%; } }
+  .noticiaUno__texto, .noticiaDos__texto, footer .redes {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +83,14 @@ header {
       align-items: center; } }
 
 .atajo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: whitesmoke;
+  background-image: url(../Assets/LogoLPF.png);
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-position: bottom;
   padding: 50px 20px;
   grid-area: atajo;
   font-family: "Segoe UI";
@@ -89,17 +98,13 @@ header {
   .atajo__titulo {
     margin: 20px 0; }
   .atajo__img {
-    border-radius: 0%;
     overflow: hidden; }
   .atajo__img img {
-    border-radius: 0%;
     transition: transform 3s; }
   .atajo__img img:hover {
     transform: scale(1.2); }
-  @media only screen and (max-width: 500px) {
-    .atajo {
-      margin: 0 5%;
-      height: 50vh; } }
+  .atajo__marcador {
+    font-size: 2em; }
 
 .divisor {
   grid-area: divisor;
@@ -116,6 +121,24 @@ header {
   grid-area: otra;
   background-color: whitesmoke;
   margin: 0 20px; }
+  .otraseccion__asociate {
+    background-image: url(../Assets/Asociate.jpg);
+    background-color: whitesmoke;
+    background-size: cover;
+    background-position: center;
+    background-clip: content-box;
+    background-blend-mode: luminosity;
+    font-family: "Segoe UI";
+    font-size: 3em; }
+    .otraseccion__asociate a {
+      text-decoration: none;
+      color: #af8b20;
+      transition: transform 3s; }
+    .otraseccion__asociate a:hover {
+      transform: scale(1.1); }
+    @media only screen and (max-width: 500px) {
+      .otraseccion__asociate {
+        margin-bottom: 5%; } }
 
 .reseña {
   font-family: "Times New Roman";
@@ -154,7 +177,6 @@ footer {
   background-color: whitesmoke;
   margin: 20px 1%;
   padding: 30px 30px;
-  border-radius: 3%;
   grid-area: contenido;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
@@ -163,10 +185,16 @@ footer {
   flex-direction: column;
   align-items: center; }
   .partido__img {
-    border-radius: 3%; }
+    width: 50%; }
+    @media only screen and (max-width: 500px) {
+      .partido__img {
+        width: 100%; } }
 
 .partidoAnterior {
   display: flex; }
+  @media only screen and (max-width: 500px) {
+    .partidoAnterior iframe {
+      width: 100%; } }
   .partidoAnterior__txt {
     display: flex;
     flex-direction: column;
@@ -175,43 +203,42 @@ footer {
     justify-content: center; }
   @media only screen and (max-width: 500px) {
     .partidoAnterior {
-      flex-direction: column; } }
+      flex-direction: column;
+      margin-top: 5%; } }
+
+.fixture {
+  margin: 50px 0; }
 
 /*seccion Plantel*/
 .principalPlantel {
   background-color: whitesmoke;
   margin: 20px 1%;
   padding: 30px 30px;
-  border-radius: 3%;
   grid-area: contenido;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-.carousel-caption {
-  background-color: aliceblue;
-  border-left: 5px solid #8f7a04;
-  border-bottom: 5px solid #8f7a04; }
-
-.plantel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 50vh; }
-  .plantel__tabla {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    border: solid whitesmoke; }
+.carrusel {
+  margin: 50px 0; }
+  .carrusel .carousel-inner {
+    width: 25%; }
     @media only screen and (max-width: 500px) {
-      .plantel__tabla {
-        font-size: 0.8em; } }
+      .carrusel .carousel-inner {
+        width: 50%; } }
+  .carrusel .carousel-caption {
+    background-color: aliceblue;
+    border-left: 5px solid #8f7a04;
+    border-bottom: 5px solid #8f7a04; }
 
 /*seccion del estadio*/
 .principalEst {
+  background-image: url(../Assets/EstadioFondo.jpg);
+  background-size: cover;
+  background-blend-mode: soft-light;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: cadetblue;
   margin: 20px 1%;
   padding: 30px 30px;
-  border-radius: 3%;
   grid-area: contenido;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
@@ -219,26 +246,19 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .descripcion__img {
-    border-radius: 3%; }
-    @media only screen and (max-width: 500px) {
-      .descripcion__img {
-        width: 400px; } }
+  @media only screen and (max-width: 500px) {
+    .descripcion__img {
+      width: 400px; } }
 
 /*seccion de asociamiento*/
 .principalAsoc {
   background-color: cadetblue;
-  margin: 20px 1%;
+  margin: 0% 1%;
   padding: 30px 30px;
-  border-radius: 3%;
   grid-area: contenido;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-  @media only screen and (max-width: 500px) {
-    .principalAsoc {
-      height: 100%; } }
   .principalAsoc .asoc {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    height: 100vh; }
+    align-items: center; }

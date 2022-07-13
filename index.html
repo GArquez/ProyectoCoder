@@ -68,7 +68,7 @@
                 <article>
                         <div class="noticiaUno">
                                    <img src="./Assets/ATUvsCAT.jpg" alt="Menendez festejando"
-                                   width="50%" class="noticiaUno__img">
+                                   class="noticiaUno__img">
                                <div class="noticiaUno__texto">
                                    <h2>Atlético ganó en su ultimo partido como local</h2>
                                    <br>
@@ -77,7 +77,7 @@
                            </div>
                            <br>
                            <div class="noticiaDos">
-                               <img src="./Assets/Elecciones.jpeg" alt="Asamblea del club" width="50%">
+                               <img src="./Assets/Elecciones.jpeg" alt="Asamblea del club" class="noticiaDos__img">
                                <div class="noticiaDos__texto">
                                    <h2>¿Habrá listas en las elecciones venideras?</h2>
                                    <br>
@@ -89,23 +89,43 @@
                 <!--Fin de noticias--> 
                 <!--Info express, con atajo de imagen hacia la seccion de los partidos -->
         <section class="atajo col-md-4">
-                                <h2 class="atajo__titulo">Proximo partido...</h2>
-                                <div class="atajo__img">
-                                    <a href="./secciones/Partidos.html">
-                                    <img src="./assets/match.jpg" alt="Matchday" width="100%">
-                                    </a>   
-                                </div>
-                                    <p class="atajo__texto">El próximo partido se jugará en condicion de visitante contra el C.A Banfield</p>                  
+          <div class="atajo__marcador d-flex flex-column">
+            <p class="align-self-center">Fecha 17 - LPF</p>
+            <div class="atajo__logos d-flex justify-content-around align-items-baseline">
+              <div class="atajo__atu d-flex flex-column align-items-center">
+                <img src="./Assets/favicon.png" alt="" width="50px">
+                <p>3</p>
+              </div>
+              <div class="atajo__rival d-flex flex-column align-items-center">
+                <img src="./Assets/EscudoTalleres.png" alt="" width="50px">
+                <p>0</p>
+              </div>
+            </div>
+          </div>
+          <div class="atajo__proximo d-flex flex-column align-items-center">
+            <h2 class="atajo__titulo">Proximo partido...</h2>
+            <div class="atajo__img">
+                <a href="./secciones/Partidos.html">
+                <img src="./assets/match.jpg" alt="Matchday" width="100%">
+                </a>   
+            </div>
+                <p class="atajo__texto">El próximo partido se jugará en condicion de visitante contra el C.A Banfield</p>                  
+          </div>
         </section>
       </div>
     </main>
     <div class="divisor col-md-12"></div>
     <div class="row otraseccion">
-      <section class="noticias col-md-12">
+      <div class="otraseccion__asociate col-md-2 d-flex flex-column justify-content-center align-items-center">
+      <a href="./Secciones/Asociamiento.html">
+        <strong class="d-flex flex-column justify-content-center align-items-center"><p>¡Asociate</p><p>al</p><p>Deca!</p></strong> 
+      </a>
+      </div>
+      <section class="noticias col-md-10">
               <article>
                       <div class="noticiaUno">
-                                 <img src="./Assets/BalantaAtlético.jpg" alt="Menendez festejando"
-                                 width="50%" class="noticiaUno__img">
+                                 <img src="./Assets/BalantaAtlético.jpg" alt="Presentacion de Balanta"
+                                 class="noticiaUno__img">
                              <div class="noticiaUno__texto">
                                  <h2>Balanta ya es "Decano"</h2>
                                  <br>
@@ -114,7 +134,7 @@
                          </div>
                          <br>
                          <div class="noticiaDos">
-                             <img src="./Assets/Remodelacion.jpg" alt="Asamblea del club" width="50%">
+                             <img src="./Assets/Remodelacion.jpg" alt="Monumental José Fierro" class="noticiaDos__img">
                              <div class="noticiaDos__texto">
                                  <h2>Obras en el Monumental</h2>
                                  <br>
